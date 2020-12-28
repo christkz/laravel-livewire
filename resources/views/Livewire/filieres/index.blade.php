@@ -1,3 +1,12 @@
+@section('script')
+<script src="{{asset('datatables-bs4/js/dataTables.boostrap.js')}}"></script>
+<script src="{{asset('datatables-bs4/js/jquery.dataTables.js')}}"></script>
+@endsection
+
+@section('css')
+<link rel="stylesheet" href="dataTables-bs4/css/dataTables.bootstrap.css">
+@endsection
+
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Filiere</h1>
@@ -25,13 +34,14 @@
                             <label class="h5 control-label">Niveau</label>
                         </div>
                         <div class="form-group col-md-7">
-                            <textarea class="form-control @error('niveau') is-invalid @enderror" id="exampleInputbody" placeholder="Enter Body" wire:model="niveau"></textarea>
+                            <input type="text" class="form-control @error('niveau') is-invalid @enderror" wire:model="niveau" autofocus>
                             @error('niveau')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                             @enderror
                         </div>
+        
                     </div>
                     <div class="row">
         
@@ -63,6 +73,7 @@
 
                                 <thead>
                                     <tr>
+                                        <th>#</th>
                                         <th scope="col">Nom Filiere</th>
                                         <th scope="col">Niveau</th>
                                         <th scope="col">Actions</th>
@@ -71,6 +82,7 @@
                                 <tbody>
                                     @foreach($filieres as $filiere)
                                     <tr>
+                                       <td>{{$filiere->id}}</td>
                                         <td>{{ $filiere->nom_filiere }} </td>
                                         <td>{{ $filiere->niveau }} </td>
 
