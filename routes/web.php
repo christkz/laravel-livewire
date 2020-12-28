@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\DashboardLivewire;
+use App\Http\Livewire\Filiere;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,4 @@ use App\Http\Livewire\DashboardLivewire;
 // });
 
 Route::get('/', DashboardLivewire::class);
+Route::get('filieres',Filiere::class);
