@@ -20,7 +20,9 @@
             {{$slot}}
             @else
 
-            @yield('content')
+                    
+                @yield('content')
+            
             
             @endif
             <!-- End Of Main Content -->
