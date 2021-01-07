@@ -58,11 +58,10 @@
                   </div>
                 
             </div>
-        </div>
         
         <div class="table-responsive mt-5">
             <div class="row">
-                <div class="col-12">
+                <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Table Filiere</h3>
