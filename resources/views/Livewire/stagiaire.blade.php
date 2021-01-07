@@ -48,15 +48,27 @@
                             <label class="h5 control-label">civilite</label>
                         </div>
                         <div class="form-group col-md-7">
-                        <div class="form-check">
-                            <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="" id="" value="checkedValue" checked>
-                            Display value
-                          </label>
+                            <input type="text" class="form-control @error('nom_filiere') is-invalid @enderror" wire:model="nom_filiere" autofocus>
+                            @error('nom_filiere')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
-                        </div>
-        
                     </div>
+                        <div class="row">
+                           <div class=" form-group col-md-3">
+                               <label for="" class="h5 control-label">Filiere</label>
+                           </div>
+                            <div class="col-md-7">
+                                <div class="form-group">
+                                  <select class="form-control" name="" id="">
+                                    <option>a</option>
+                                    
+                                  </select>
+                                </div>
+                            </div>
+                        </div>
                     <div class="row">
         
                         <div class="col-md-4 pull-right">
@@ -78,7 +90,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Table Filiere</h3>
+                            <h3 class="card-title">Table stagiaire</h3>
                         </div>
 
                         <div class="card-body">
@@ -87,18 +99,25 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th scope="col">Nom Filiere</th>
-                                        <th scope="col">Niveau</th>
+                                        <th scope="col">Nom</th>
+                                        <th scope="col">Prenom</th>
+                                        <th scope="col">civilite</th>
+                                        <th scope="col">filiere</th>
                                         <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                      
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+
 
                                         <td>
-                                            <button type="button" class="btn btn-sm btn-info" wire:click="edit({{$filiere->id}})">Edit</button>
-                                            <button type="button" class="btn btn-sm btn-danger" onclick="confirm('voulez vous supprimer definitivement?') || event.stopImmediatePropagation()" class="btn btn-danger btn-xs" wire:click="delete({{$filiere->id}})">Delete</button>
+                                            <button type="button" class="btn btn-sm btn-info" wire:click="">Edit</button>
+                                            <button type="button" class="btn btn-sm btn-danger"  wire:click="">Delete</button>
                                         </td>
                                     </tr>
                                 </tbody>
